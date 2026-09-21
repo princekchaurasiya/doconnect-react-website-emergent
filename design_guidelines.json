@@ -1,0 +1,156 @@
+{
+  "project_name": "Doconnect — Home Visit Doctor & Healthcare Mumbai",
+  "theme": {
+    "mode": "light",
+    "background_dominant": "white",
+    "description": "Clean, modern, highly trustworthy white-dominant medical aesthetic with teal-emerald accents, warm slate typography, generous white space, and soft rounded borders."
+  },
+  "typography": {
+    "headings": {
+      "family": "'Plus Jakarta Sans', 'Outfit', sans-serif",
+      "h1": "text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 leading-[1.15]",
+      "h2": "text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-slate-900 leading-[1.2]",
+      "h3": "text-xl sm:text-2xl font-semibold text-slate-900 leading-snug",
+      "h4": "text-lg sm:text-xl font-semibold text-slate-800",
+      "anti_patterns": ["Inter", "Roboto", "Open Sans", "Space Grotesk"]
+    },
+    "body": {
+      "family": "'DM Sans', 'Plus Jakarta Sans', sans-serif",
+      "size": "text-base sm:text-lg text-slate-6xl leading-relaxed font-normal",
+      "small": "text-sm text-slate-500 font-medium"
+    },
+    "labels_and_badges": {
+      "family": "'JetBrains Mono', monospace",
+      "style": "uppercase text-xs font-semibold tracking-wider text-teal-700 bg-teal-50 px-3 py-1 rounded-full border border-teal-200/60 inline-flex items-center gap-1.5"
+    }
+  },
+  "colors": {
+    "primary_brand": {
+      "teal_500": "#14B8A6",
+      "teal_600": "#0D9488",
+      "teal_700": "#0F766E",
+      "teal_50": "#F0FDF4"
+    },
+    "secondary_trust": {
+      "navy_900": "#0F172A",
+      "slate_800": "#1E293B",
+      "slate_600": "#475569",
+      "slate_100": "#F1F5F9",
+      "slate_50": "#F8FAFC"
+    },
+    "accents_and_functional": {
+      "emergency_red": "#E11D48",
+      "emergency_red_bg": "#FFF1F2",
+      "whatsapp_green": "#25D366",
+      "whatsapp_green_hover": "#1EBE57",
+      "gold_star": "#F59E0B",
+      "sky_accent": "#E0F2FE"
+    },
+    "border_and_shadow": {
+      "border_light": "border border-slate-200/80 hover:border-teal-300 transition-colors",
+      "shadow_subtle": "shadow-[0_4px_20px_-4px_rgba(15,23,42,0.06)]",
+      "shadow_hover": "shadow-[0_12px_32px_-6px_rgba(13,148,136,0.12)]"
+    }
+  },
+  "spacing_and_layout": {
+    "containers": "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8",
+    "section_padding": "py-16 sm:py-24",
+    "card_padding": "p-6 sm:p-8",
+    "border_radius": {
+      "card": "rounded-2xl",
+      "button": "rounded-xl",
+      "badge": "rounded-full"
+    },
+    "bento_grid": {
+      "hero": "grid grid-cols-1 lg:grid-cols-12 gap-8 items-center",
+      "services": "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6",
+      "features": "grid grid-cols-1 md:grid-cols-3 gap-6"
+    }
+  },
+  "motion_and_interactions": {
+    "library": "framer-motion + lenis smooth scroll",
+    "principles": "Subtle, fast, mobile-optimized, performance-first. No distracting heavy 3D or layout-shifting animations.",
+    "specs": {
+      "fade_up": {
+        "initial": { "opacity": 0, "y": 16 },
+        "animate": { "opacity": 1, "y": 0 },
+        "transition": { "duration": 0.4, "ease": [0.16, 1, 0.3, 1] }
+      },
+      "stagger": { "staggerChildren": 0.08 },
+      "hover_card": "hover:-translate-y-1 hover:shadow-lg transition-all duration-200"
+    }
+  },
+  "key_components": [
+    {
+      "name": "Header & Nav",
+      "type": "Sticky Header with Glassmorphism",
+      "details": "White-dominant backdrop-blur-md bg-white/90 border-b border-slate-100. Typographic 'Doconnect' wordmark with teal stethoscope accent dot. Desktop nav links: Home, About, Services, Doctor Home Visit, Locations, Packages, Doctors, Blog, FAQ, Contact. Action CTAs: 'Call Now' & 'Book Home Visit'."
+    },
+    {
+      "name": "Hero Section",
+      "type": "Split Grid Hero with Trust Badges",
+      "details": "Left: Masked line-by-line reveal heading 'Doctor Home Visits in Mumbai, When You Need Care at Home'. Subheading, 24/7 badge, 5.0 Google Rating pill, Quick Booking pill & Call CTAs. Right: High quality warm doctor home visit photography card with live doctor availability badge."
+    },
+    {
+      "name": "Why Choose Doconnect & Trust Strip",
+      "type": "Trust Metrics Bar & Feature Cards",
+      "details": "Verified Google Rating 5.0 badge (1 authentic review link), 24/7 Availability, Verified MBBD/MD Doctors, Rapid 60-Min Home Arrival, Sterilized Kits. Google Maps Directions integration block."
+    },
+    {
+      "name": "11 Core Services Grid",
+      "type": "Interactive Service Cards",
+      "details": "Doctor for Home Visit, Sugar Check, Dressing & Wound Care, Urgent Care at Home, IV Fluid Therapy, Nursing Care, Physiotherapy at Home, Home Lab Testing, Mental Health Support, Nebulisation, Injection Administration, Urethral Catheterisation."
+    },
+    {
+      "name": "Appointment Booking Form (Docville-inspired + Enhanced)",
+      "type": "Multi-step / Quick Interactive Booking Panel",
+      "details": "Fields: Patient Full Name, Mobile Number, Email, Delivery Area (Mumbai Location), Preferred Date & Time Slots, Service Required. Action buttons: 'Confirm Home Visit' & 'Request Callback via WhatsApp'."
+    },
+    {
+      "name": "Mobile Sticky Bottom CTA Bar",
+      "type": "Fixed Mobile Dock",
+      "details": "Visible only on mobile (< 768px). Fixed bottom bar with 3 actions: Call Now (Phone icon), WhatsApp Us (WhatsApp green icon), Book Visit (Teal primary button)."
+    },
+    {
+      "name": "Google Maps & Local SEO Section",
+      "type": "Embedded Map & Verified Business Info",
+      "details": "Address: S-II C-1, BMC Colony, Anand Nagar, Andheri West, Mumbai 400053. Phone: 084248 45423. Google rating 5.0 badge with direct link to Google reviews and 'Get Directions' button."
+    }
+  ],
+  "image_urls": [
+    {
+      "category": "Hero Doctor Visit",
+      "url": "https://images.unsplash.com/photo-1758691462321-9b6c98c40f7e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjY2NzF8MHwxfHNlYXJjaHwyfHxkb2N0b3IlMjBob21lJTIwdmlzaXQlMjBoZWFsdGhjYXJlJTIwcGF0aWVudHxlbnwwfHx8fDE3ODk5NjgwMzR8MA&ixlib=rb-4.1.0&q=85",
+      "alt": "Doconnect doctor conducting a home visit consultation with an elderly patient in Mumbai"
+    },
+    {
+      "category": "Elderly Home Care & Examination",
+      "url": "https://images.pexels.com/photos/7345476/pexels-photo-7345476.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "Healthcare professional checking blood pressure during home visit"
+    },
+    {
+      "category": "Pediatric & Family Consultation",
+      "url": "https://images.pexels.com/photos/7653136/pexels-photo-7653136.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "Doctor checking child at home in Mumbai"
+    },
+    {
+      "category": "Doctor Consultation Warmth",
+      "url": "https://images.pexels.com/photos/7345460/pexels-photo-7345460.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "Friendly medical consultation at home"
+    },
+    {
+      "category": "Mumbai Skyline / Service Coverage",
+      "url": "https://images.pexels.com/photos/5414582/pexels-photo-5414582.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "Mumbai service area skyline"
+    }
+  ],
+  "UNIVERSAL GUIDELINES FOR MAIN AGENT": [
+    "Strictly follow light, white-dominant, high-contrast healthcare design aesthetics.",
+    "Do NOT use pure black background or heavy dark gradients.",
+    "Ensure all interactive elements have explicit data-testid attributes.",
+    "Do NOT copy Docville directly, but ensure booking experience matches high usability standards.",
+    "Never imply more than 1 Google review for the 5.0 rating.",
+    "Ensure responsive mobile bottom sticky bar (Call | WhatsApp | Book) is present.",
+    "Never use generic AI emojis like 🤖 or 🧠 for UI icons; use Lucide or Phosphor icons."
+  ]
+}
