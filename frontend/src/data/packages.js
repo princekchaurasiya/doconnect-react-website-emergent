@@ -59,3 +59,46 @@ export const PACKAGES = [
 
 export const PRICING_NOTE =
   "Package pricing depends on the patient's condition, visit frequency and location. Doconnect shares transparent pricing on a quick call — no hidden charges.";
+
+export const PLAN_INCLUSIONS = [
+  "MBBS General Physician doctor home visits",
+  "24x7 doctor on call for urgent concerns",
+  "Qualified nurse visits at home",
+  "Home lab testing — blood & urine sample collection",
+  "IV treatments, injections & nebulisation at home",
+  "Dressing, wound care & catheterisation support",
+  "Physiotherapy sessions at home",
+  "A dedicated care coordinator for your family",
+  "Updates to family members after every visit",
+  "Priority appointment scheduling",
+];
+
+export const PLANS = [
+  {
+    slug: "essential",
+    name: "Essential Care",
+    tagline: "For independent patients who need consistent medical check-ins at home.",
+    recommended: false,
+    features: [
+      "Scheduled doctor home visits",
+      "24x7 doctor on call",
+      "Home lab test coordination",
+      "Care coordinator support",
+      "Family updates after visits",
+    ],
+  },
+  {
+    slug: "complete",
+    name: "Complete Care",
+    tagline: "For patients needing closer monitoring, nursing support and priority care.",
+    recommended: true,
+    features: [
+      "Everything in Essential Care",
+      "Qualified nurse visits at home",
+      "IV, injection & wound care support",
+      "Physiotherapy coordination",
+      "Priority appointment scheduling",
+      "Post-hospitalisation care planning",
+    ],
+  },
+];

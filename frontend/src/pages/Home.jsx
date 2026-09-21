@@ -7,6 +7,7 @@ import {
 import Seo, { faqSchema, breadcrumbSchema } from "../components/Seo";
 import Reveal, { MaskedLine } from "../components/Reveal";
 import MapSection from "../components/MapSection";
+import Founder from "../components/Founder";
 import CtaBand, { EmergencyNote } from "../components/CtaBand";
 import { SITE, TRUST_STRIP, TESTIMONIALS, IMAGES } from "../data/site";
 import { SERVICES } from "../data/services";
@@ -284,8 +285,10 @@ export default function Home() {
         </div>
       </section>
 
+      <Founder compact />
+
       {/* PACKAGES PREVIEW */}
-      <section className="py-16 sm:py-24 bg-white" data-testid="packages-section">
+      <section className="py-16 sm:py-24 bg-slate-50" data-testid="packages-section">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Reveal className="max-w-2xl">
             <p className="text-xs font-semibold uppercase tracking-wider text-teal-700">Care Packages</p>
@@ -326,7 +329,7 @@ export default function Home() {
       </section>
 
       {/* TESTIMONIALS */}
-      <section className="py-16 sm:py-24 bg-slate-50" data-testid="testimonials-section">
+      <section className="py-16 sm:py-24 bg-white" data-testid="testimonials-section">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Reveal className="max-w-2xl">
             <p className="text-xs font-semibold uppercase tracking-wider text-teal-700">Patient Experiences</p>

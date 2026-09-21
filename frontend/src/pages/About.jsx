@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight, HeartHandshake, MapPin, ShieldCheck, Clock } from "lucide-react";
 import Seo, { breadcrumbSchema } from "../components/Seo";
 import Reveal from "../components/Reveal";
+import Founder from "../components/Founder";
 import CtaBand from "../components/CtaBand";
 import { IMAGES } from "../data/site";
 
@@ -58,6 +59,8 @@ export default function About() {
           </div>
         </div>
       </section>
+
+      <Founder />
 
       <section className="bg-slate-50 py-16 sm:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
