@@ -5,6 +5,8 @@ import Reveal from "../components/Reveal";
 import CtaBand from "../components/CtaBand";
 import { POSTS, postPath } from "../data/posts";
 
+const articleLink = (p) => (p.isResourceLink && p.resourcePath ? p.resourcePath : postPath(p.slug));
+
 const formatDate = (d) =>
   new Date(d).toLocaleDateString("en-IN", { day: "numeric", month: "long", year: "numeric" });
 
@@ -31,7 +33,7 @@ export default function Blog() {
           </Reveal>
 
           <Reveal className="mt-12">
-            <Link to={postPath(POSTS[0].slug)} data-testid={`blog-featured-${POSTS[0].slug}`}
+            <Link to={articleLink(POSTS[0])} data-testid={`blog-featured-${POSTS[0].slug}`}
               className="group grid lg:grid-cols-2 gap-0 rounded-3xl border border-slate-200/80 bg-white overflow-hidden hover:shadow-[0_12px_32px_-6px_rgba(13,148,136,0.12)] hover:border-teal-300 transition-all duration-200">
               <div className="overflow-hidden">
                 <img src={POSTS[0].image} alt={POSTS[0].imageAlt} className="h-64 lg:h-full w-full object-cover group-hover:scale-[1.02] transition-transform duration-300" />
@@ -56,7 +58,7 @@ export default function Blog() {
           <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {POSTS.slice(1).map((p, i) => (
               <Reveal key={p.slug} delay={(i % 3) * 0.05}>
-                <Link to={postPath(p.slug)} data-testid={`blog-card-${p.slug}`}
+                <Link to={articleLink(p)} data-testid={`blog-card-${p.slug}`}
                   className="group block h-full rounded-2xl border border-slate-200/80 bg-white overflow-hidden hover:-translate-y-1 hover:shadow-[0_12px_32px_-6px_rgba(13,148,136,0.12)] hover:border-teal-300 transition-all duration-200">
                   <div className="overflow-hidden">
                     <img src={p.image} alt={p.imageAlt} loading="lazy" className="h-44 w-full object-cover group-hover:scale-[1.03] transition-transform duration-300" />

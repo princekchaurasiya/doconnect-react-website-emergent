@@ -6,7 +6,12 @@ import { SITE } from "../data/site";
 export default function NotFound() {
   return (
     <>
-      <Seo title="Page Not Found | Doconnect" description="The page you are looking for could not be found. Book a doctor home visit in Mumbai with Doconnect." path="/404" />
+      <Seo
+        title="Page Not Found | Doconnect"
+        description="The page you are looking for could not be found. Book a doctor home visit in Mumbai with Doconnect."
+        path="/404"
+        noindex
+      />
       <section className="bg-white py-24 sm:py-32" data-testid="not-found-page">
         <div className="max-w-xl mx-auto px-4 text-center">
           <p className="font-heading text-7xl font-extrabold text-teal-100">404</p>

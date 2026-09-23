@@ -22,6 +22,7 @@ import Faq from "./pages/Faq";
 import Contact from "./pages/Contact";
 import Legal from "./pages/Legal";
 import NotFound from "./pages/NotFound";
+import CanadaPatientGuide from "./pages/CanadaPatientGuide";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -66,6 +67,7 @@ function Shell() {
           <Route path="/doctors" element={<Doctors />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
+          <Route path="/resources/canada-patients-healthcare-india" element={<CanadaPatientGuide />} />
           <Route path="/faq" element={<Faq />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/privacy-policy" element={<Legal page="privacy-policy" />} />

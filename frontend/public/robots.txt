@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
 
+# AI / LLM crawlers (optional discovery)
+Allow: /llms.txt
+
 Sitemap: https://www.doconnect.org/sitemap.xml

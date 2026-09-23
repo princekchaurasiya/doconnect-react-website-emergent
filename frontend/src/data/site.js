@@ -119,21 +119,54 @@ export const IMAGES = {
   doctorTabletAlt: "Doctor reviewing patient records on a laptop",
 };
 
+/** Verified office location — Anand Nagar, Andheri West */
+export const GEO_COORDINATES = {
+  latitude: 19.1136,
+  longitude: 72.8697,
+};
+
+export const MUMBAI_AREAS_SERVED = [
+  "Andheri West",
+  "Andheri",
+  "Jogeshwari",
+  "Goregaon",
+  "Malad",
+  "Ram Mandir",
+  "Vile Parle",
+  "Mumbai",
+];
+
+export const ORGANIZATION_ID = `${SITE.domain}/#organization`;
+export const WEBSITE_ID = `${SITE.domain}/#website`;
+
 export const localBusinessSchema = {
   "@context": "https://schema.org",
-  "@type": "MedicalBusiness",
-  name: "Doconnect | Home visit doctor on call",
+  "@type": ["MedicalBusiness", "Physician"],
+  "@id": ORGANIZATION_ID,
+  name: "Doconnect | Doctor home visit Mumbai",
+  alternateName: "Doconnect Home Healthcare",
   url: SITE.domain,
+  image: IMAGES.hero,
+  logo: IMAGES.hero,
   telephone: "+918424845423",
   email: SITE.email,
+  description:
+    "Doctor home visits and at-home medical care in Mumbai. Open 24 hours. Based in Andheri West.",
+  priceRange: "$$",
   address: {
     "@type": "PostalAddress",
     streetAddress: "S-II C-1, BMC Colony, Anand Nagar",
-    addressLocality: "Andheri West, Mumbai",
+    addressLocality: "Andheri West",
     addressRegion: "Maharashtra",
     postalCode: "400053",
     addressCountry: "IN",
   },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: GEO_COORDINATES.latitude,
+    longitude: GEO_COORDINATES.longitude,
+  },
+  hasMap: SITE.directionsUrl,
   openingHoursSpecification: {
     "@type": "OpeningHoursSpecification",
     dayOfWeek: [
@@ -148,6 +181,63 @@ export const localBusinessSchema = {
     opens: "00:00",
     closes: "23:59",
   },
-  areaServed: "Mumbai",
-  medicalSpecialty: "PrimaryCare",
+  areaServed: MUMBAI_AREAS_SERVED.map((name) => ({
+    "@type": "AdministrativeArea",
+    name,
+  })),
+  medicalSpecialty: ["PrimaryCare", "HomeHealth"],
+  sameAs: [SITE.googleReviewsUrl],
+  contactPoint: {
+    "@type": "ContactPoint",
+    telephone: "+918424845423",
+    contactType: "customer service",
+    areaServed: "IN",
+    availableLanguage: ["English", "Hindi", "Marathi"],
+    hoursAvailable: {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday",
+      ],
+      opens: "00:00",
+      closes: "23:59",
+    },
+  },
 };
+
+export const webSiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": WEBSITE_ID,
+  url: SITE.domain,
+  name: "Doconnect",
+  description: "Doctor home visit and home healthcare in Mumbai — 24/7.",
+  inLanguage: "en-IN",
+  publisher: { "@id": ORGANIZATION_ID },
+};
+
+/** Local landing pages — reinforces Mumbai neighbourhood SEO */
+export function locationLocalSchema(loc, path) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "MedicalBusiness",
+    "@id": `${SITE.domain}${path}#local`,
+    name: `Doconnect — Doctor Home Visit in ${loc.name}`,
+    url: `${SITE.domain}${path}`,
+    telephone: "+918424845423",
+    email: SITE.email,
+    description: loc.metaDescription,
+    address: localBusinessSchema.address,
+    geo: localBusinessSchema.geo,
+    areaServed: {
+      "@type": "Place",
+      name: `${loc.name}, Mumbai, Maharashtra, India`,
+    },
+    parentOrganization: { "@id": ORGANIZATION_ID },
+  };
+}

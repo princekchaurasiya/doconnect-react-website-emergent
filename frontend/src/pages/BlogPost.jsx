@@ -14,6 +14,9 @@ export default function BlogPost() {
   const { slug } = useParams();
   const post = POSTS.find((p) => p.slug === slug);
   if (!post) return <Navigate to="/blog" replace />;
+  if (post.isResourceLink && post.resourcePath) {
+    return <Navigate to={post.resourcePath} replace />;
+  }
   const path = postPath(post.slug);
   const related = POSTS.filter((p) => p.slug !== slug).slice(0, 3);
 

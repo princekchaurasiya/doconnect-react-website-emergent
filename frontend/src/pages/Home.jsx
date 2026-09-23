@@ -9,7 +9,7 @@ import Reveal, { MaskedLine } from "../components/Reveal";
 import MapSection from "../components/MapSection";
 import Founder from "../components/Founder";
 import CtaBand, { EmergencyNote } from "../components/CtaBand";
-import { SITE, TRUST_STRIP, TESTIMONIALS, IMAGES } from "../data/site";
+import { SITE, TRUST_STRIP, TESTIMONIALS, IMAGES, webSiteSchema } from "../data/site";
 import { SERVICES } from "../data/services";
 import { LOCATIONS, locationPath } from "../data/locations";
 import { PACKAGES } from "../data/packages";
@@ -41,7 +41,11 @@ export default function Home() {
         title="Doconnect | Doctor Home Visit in Mumbai | Doctor at Home"
         description="Book a doctor home visit in Mumbai with Doconnect. Qualified doctors, 24/7 availability, transparent pricing. Serving Andheri, Jogeshwari, Goregaon, Malad and more."
         path="/"
-        jsonLd={[breadcrumbSchema([{ name: "Home", path: "/" }])]}
+        jsonLd={[
+          webSiteSchema,
+          breadcrumbSchema([{ name: "Home", path: "/" }]),
+          faqSchema(FAQS.slice(0, 6)),
+        ]}
       />
 
       {/* HERO */}
@@ -432,10 +436,6 @@ export default function Home() {
       </section>
 
       <CtaBand />
-
-      <script type="application/ld+json" style={{ display: "none" }}>
-        {JSON.stringify(faqSchema(FAQS.slice(0, 6)))}
-      </script>
     </>
   );
 }

@@ -6,7 +6,7 @@ import {
 import Seo, { breadcrumbSchema, faqSchema } from "../components/Seo";
 import Reveal from "../components/Reveal";
 import { EmergencyNote } from "../components/CtaBand";
-import { SITE } from "../data/site";
+import { SITE, ORGANIZATION_ID, MUMBAI_AREAS_SERVED } from "../data/site";
 import { SERVICES } from "../data/services";
 import { LOCATIONS, locationPath } from "../data/locations";
 
@@ -59,8 +59,11 @@ export default function ServiceDetail() {
             "@context": "https://schema.org",
             "@type": "Service",
             name: service.name,
-            provider: { "@type": "MedicalBusiness", name: "Doconnect", telephone: "+918424845423" },
-            areaServed: "Mumbai",
+            provider: { "@id": ORGANIZATION_ID },
+            areaServed: MUMBAI_AREAS_SERVED.map((name) => ({
+              "@type": "AdministrativeArea",
+              name,
+            })),
             description: service.tagline,
           },
         ]}

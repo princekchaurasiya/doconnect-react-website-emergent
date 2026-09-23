@@ -1,4 +1,7 @@
+import { blogTeaser } from "./canadaPatientGuide";
+
 export const POSTS = [
+  blogTeaser,
   {
     slug: "doctor-home-visit-mumbai-when-good-option",
     title: "Doctor Home Visit in Mumbai: When Is It a Good Option?",

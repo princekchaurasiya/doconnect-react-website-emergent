@@ -3,6 +3,9 @@
 # IDE and editors
 .idea/
 .vscode/
+.cursor/
+tools/claude-seo/
+frontend/seo-audit-home.html
 
 # Dependencies
 node_modules/

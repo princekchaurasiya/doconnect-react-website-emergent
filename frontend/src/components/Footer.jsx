@@ -72,6 +72,11 @@ export default function Footer() {
             <h3 className="text-sm font-semibold text-slate-900">Resources & Legal</h3>
             <ul className="mt-3 space-y-2 text-sm">
               <li><Link to="/blog" className="text-slate-600 hover:text-teal-700 transition-colors">Blog</Link></li>
+              <li>
+                <Link to="/resources/canada-patients-healthcare-india" className="text-slate-600 hover:text-teal-700 transition-colors">
+                  Canada patient guide
+                </Link>
+              </li>
               <li><Link to="/faq" className="text-slate-600 hover:text-teal-700 transition-colors">FAQs</Link></li>
               <li><Link to="/privacy-policy" className="text-slate-600 hover:text-teal-700 transition-colors">Privacy Policy</Link></li>
               <li><Link to="/terms" className="text-slate-600 hover:text-teal-700 transition-colors">Terms & Conditions</Link></li>

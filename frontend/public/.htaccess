@@ -1,0 +1,32 @@
+# Doconnect React SPA + legacy PHP redirects (Apache / cPanel)
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Force HTTPS (if SSL is active on host)
+  RewriteCond %{HTTPS} !=on
+  RewriteCond %{HTTP:X-Forwarded-Proto} !https [NC]
+  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+  # Legacy PHP site → new clean URLs (SEO)
+  RewriteRule ^index\.php$ / [L,R=301,NC]
+  RewriteRule ^blog\.php$ /blog [L,R=301,NC]
+  RewriteRule ^blog-post\.php$ /blog [L,R=301,NC]
+  RewriteRule ^contact\.php$ /contact [L,R=301,NC]
+  RewriteRule ^location\.php$ /locations [L,R=301,NC]
+
+  # React Router — serve index.html for non-file routes
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule . /index.html [L]
+</IfModule>
+
+# Cache static assets
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+</IfModule>

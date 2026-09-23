@@ -6,7 +6,7 @@ import {
 import Seo, { breadcrumbSchema, faqSchema } from "../components/Seo";
 import Reveal, { MaskedLine } from "../components/Reveal";
 import CtaBand, { EmergencyNote } from "../components/CtaBand";
-import { SITE, IMAGES } from "../data/site";
+import { SITE, IMAGES, ORGANIZATION_ID, MUMBAI_AREAS_SERVED } from "../data/site";
 import { LOCATIONS, locationPath } from "../data/locations";
 
 const WHO = [
@@ -53,8 +53,11 @@ export default function DoctorHomeVisit() {
             "@context": "https://schema.org",
             "@type": "Service",
             name: "Doctor Home Visit in Mumbai",
-            provider: { "@type": "MedicalBusiness", name: "Doconnect", telephone: "+918424845423" },
-            areaServed: "Mumbai",
+            provider: { "@id": ORGANIZATION_ID },
+            areaServed: MUMBAI_AREAS_SERVED.map((name) => ({
+              "@type": "AdministrativeArea",
+              name,
+            })),
             description: "Professional doctor home visits across Mumbai — examination, diagnosis, treatment and follow-up care at your doorstep.",
           },
         ]}

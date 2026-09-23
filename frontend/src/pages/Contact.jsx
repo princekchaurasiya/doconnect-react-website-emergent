@@ -3,7 +3,7 @@ import Seo, { breadcrumbSchema } from "../components/Seo";
 import Reveal from "../components/Reveal";
 import BookingForm from "../components/BookingForm";
 import { EmergencyNote } from "../components/CtaBand";
-import { SITE } from "../data/site";
+import { SITE, ORGANIZATION_ID } from "../data/site";
 
 export default function Contact() {
   return (
@@ -12,7 +12,18 @@ export default function Contact() {
         title="Contact Doconnect | Book a Doctor Home Visit in Mumbai"
         description="Book a doctor home visit in Mumbai with Doconnect. Call 084248 45423 (open 24 hours), WhatsApp us, or request a callback through our appointment form."
         path="/contact"
-        jsonLd={[breadcrumbSchema([{ name: "Home", path: "/" }, { name: "Contact", path: "/contact" }])]}
+        jsonLd={[
+          breadcrumbSchema([{ name: "Home", path: "/" }, { name: "Contact", path: "/contact" }]),
+          {
+            "@context": "https://schema.org",
+            "@type": "ContactPage",
+            url: `${SITE.domain}/contact`,
+            name: "Contact Doconnect — Doctor home visit Mumbai",
+            description:
+              "Book a doctor home visit in Mumbai. Call 084248 45423, WhatsApp, or use the appointment form.",
+            mainEntity: { "@id": ORGANIZATION_ID },
+          },
+        ]}
       />
       <section className="bg-white py-16 sm:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

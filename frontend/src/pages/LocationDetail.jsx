@@ -3,7 +3,7 @@ import { Phone, CalendarCheck, MapPin, ChevronRight, CheckCircle2, ArrowRight, C
 import Seo, { breadcrumbSchema, faqSchema } from "../components/Seo";
 import Reveal from "../components/Reveal";
 import { EmergencyNote } from "../components/CtaBand";
-import { SITE } from "../data/site";
+import { SITE, locationLocalSchema } from "../data/site";
 import { LOCATIONS, locationPath } from "../data/locations";
 import { SERVICES } from "../data/services";
 
@@ -22,6 +22,7 @@ export default function LocationDetail() {
         description={loc.metaDescription}
         path={path}
         jsonLd={[
+          locationLocalSchema(loc, path),
           breadcrumbSchema([
             { name: "Home", path: "/" },
             { name: "Locations", path: "/locations" },
